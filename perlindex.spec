@@ -48,8 +48,6 @@ rm -rf %buildroot
 %files
 %defattr(-,root,root)
 %doc ChangeLog META.yml README
-%{_mandir}/man3/*
+%{_bindir}/*
+%{_mandir}/man?/*
 %perl_vendorlib/*
-/usr/bin/perlindex
-/usr/share/man/man1/perlindex.1.lzma
-
