@@ -3,7 +3,7 @@
 
 Name:       %{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    English language stemming
 License:    GPL+ or Artistic
