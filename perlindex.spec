@@ -1,18 +1,18 @@
 %define upstream_name    perlindex
 %define upstream_version 1.605
 
-Name:       %{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    English language stemming
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	English language stemming
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildArch:	noarch
 
 %description
 This routine applies the Porter Stemming Algorithm to its parameters,
@@ -32,22 +32,31 @@ think of any examples.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc ChangeLog META.yml README
 %{_bindir}/*
 %{_mandir}/man?/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 1.605.0-2mdv2011.0
++ Revision: 658675
+- update file list
+- rebuild for updated spec-helper
+
+* Tue May 18 2010 Jérôme Quelin <jquelin@mandriva.org> 1.605.0-1mdv2011.0
++ Revision: 545246
+- import perlindex
+
+
+* Tue May 18 2010 cpan2dist 1.605-1mdv
+- initial mdv release, generated with cpan2dist
