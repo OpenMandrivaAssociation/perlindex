@@ -1,15 +1,15 @@
 %define upstream_name    perlindex
-%define upstream_version 1.605
+%define upstream_version 1.606
 
 Name:		%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	English language stemming
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/perlindex
+Source0:	https://cpan.metacpan.org/authors/id/U/UL/ULPFR/perlindex-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
