@@ -1,15 +1,13 @@
 %define upstream_name    perlindex
-%define upstream_version 1.606
-
 Name:		%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.606
+Release:	2
 
 Summary:	English language stemming
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/perlindex
-Source0:	https://cpan.metacpan.org/authors/id/U/UL/ULPFR/perlindex-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/U/UL/ULPFR/perlindex-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -30,7 +28,7 @@ My version may misbehave on short words starting with "y", but I can't
 think of any examples.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
